@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using RuntimeHandle;
+//using RuntimeHandle;
 
 public class SelectTransformGizmo : MonoBehaviour
 {
@@ -16,19 +16,19 @@ public class SelectTransformGizmo : MonoBehaviour
     private RaycastHit raycastHit;
     private RaycastHit raycastHitHandle;
     private GameObject runtimeTransformGameObj;
-    private RuntimeTransformHandle runtimeTransformHandle;
+    //private RuntimeTransformHandle runtimeTransformHandle;
     private int runtimeTransformLayer = 6;
     private int runtimeTransformLayerMask;
 
     private void Start()
     {
         runtimeTransformGameObj = new GameObject();
-        runtimeTransformHandle = runtimeTransformGameObj.AddComponent<RuntimeTransformHandle>();
+        //runtimeTransformHandle = runtimeTransformGameObj.AddComponent<RuntimeTransformHandle>();
         runtimeTransformGameObj.layer = runtimeTransformLayer;
         runtimeTransformLayerMask = 1 << runtimeTransformLayer; //Layer number represented by a single bit in the 32-bit integer using bit shift
-        runtimeTransformHandle.type = HandleType.POSITION;
-        runtimeTransformHandle.autoScale = true;
-        runtimeTransformHandle.autoScaleFactor = 1.0f;
+        //runtimeTransformHandle.type = HandleType.POSITION;
+        //runtimeTransformHandle.autoScale = true;
+        //runtimeTransformHandle.autoScaleFactor = 1.0f;
         runtimeTransformGameObj.SetActive(false);
     }
 
@@ -78,7 +78,7 @@ public class SelectTransformGizmo : MonoBehaviour
                     {
                         originalMaterialSelection = originalMaterialHighlight;
                         selection.GetComponent<MeshRenderer>().material = selectionMaterial;
-                        runtimeTransformHandle.target = selection;
+                        //runtimeTransformHandle.target = selection;
                         runtimeTransformGameObj.SetActive(true);
                     }
                     highlight = null;
@@ -111,25 +111,25 @@ public class SelectTransformGizmo : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                runtimeTransformHandle.type = HandleType.POSITION;
+                //runtimeTransformHandle.type = HandleType.POSITION;
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                runtimeTransformHandle.type = HandleType.ROTATION;
+                //runtimeTransformHandle.type = HandleType.ROTATION;
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                runtimeTransformHandle.type = HandleType.SCALE;
+                //runtimeTransformHandle.type = HandleType.SCALE;
             }
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
                 if (Input.GetKeyDown(KeyCode.G))
                 {
-                    runtimeTransformHandle.space = HandleSpace.WORLD;
+                   // runtimeTransformHandle.space = HandleSpace.WORLD;
                 }
                 if (Input.GetKeyDown(KeyCode.L))
                 {
-                    runtimeTransformHandle.space = HandleSpace.LOCAL;
+                    //runtimeTransformHandle.space = HandleSpace.LOCAL;
                 }
             }
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,88 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &250122319
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 720524094}
-    m_Modifications:
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -923
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 135
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493011984099511792, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_Name
-      value: Gizmo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493011984099511792, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
---- !u!4 &250122320 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3264164213628414356, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-  m_PrefabInstance: {fileID: 250122319}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &368288151
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,11 +269,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &385934225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8493011984099511792, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
-  m_PrefabInstance: {fileID: 250122319}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &578910413
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +726,6 @@ RectTransform:
   m_Children:
   - {fileID: 1522499453}
   - {fileID: 671275067}
-  - {fileID: 250122320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1365,7 +1277,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939326429}
-  - component: {fileID: 1939326430}
   - component: {fileID: 1939326431}
   m_Layer: 0
   m_Name: TransformGizmo
@@ -1389,20 +1300,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1939326430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939326428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61a15e1cc72ac6449b54b6e17bc3695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightMaterial: {fileID: 2100000, guid: 0c05acdd0954d0b44a3ecae7115389b8, type: 2}
-  selectionMaterial: {fileID: 2100000, guid: 0ef53b4c75123934c91ea02388041f4b, type: 2}
 --- !u!114 &1939326431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,7 +1314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 0c05acdd0954d0b44a3ecae7115389b8, type: 2}
   selectionMaterial: {fileID: 2100000, guid: 0ef53b4c75123934c91ea02388041f4b, type: 2}
-  Gizmo: {fileID: 385934225}
+  Gizmo: {fileID: 8493011984099511792, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
 --- !u!1 &2000325548
 GameObject:
   m_ObjectHideFlags: 0

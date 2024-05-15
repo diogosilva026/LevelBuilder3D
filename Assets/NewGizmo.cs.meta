@@ -3,7 +3,10 @@ guid: 5da42a295b922ee4880732bc45ea256f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - highlightMaterial: {instanceID: 0}
+  - selectionMaterial: {instanceID: 0}
+  - Gizmo: {fileID: 8493011984099511792, guid: bc1aacee53143ed4d9ab9f389d72dd23, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

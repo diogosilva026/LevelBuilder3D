@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -22,7 +23,7 @@ public class NewGizmo : MonoBehaviour
 
     void Start()
     {
-        Gizmo.SetActive(false);
+        //Gizmo.SetActive(false);
     }
 
     void Update()
@@ -51,12 +52,15 @@ public class NewGizmo : MonoBehaviour
             }
         }
 
+        
+
+        //Para ter os objetos a mudar de cor quando estão selecionados pelo cursor
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             //ApplyLayerToChildren(runtimeTransformGameObj);
             if (Physics.Raycast(ray, out raycastHit))
             {
-                if (Physics.Raycast(ray, out raycastHitHandle, Mathf.Infinity, runtimeTransformLayerMask)) //Raycast towards runtime transform handle only
+                if (Physics.Raycast(ray, out raycastHitHandle, Mathf.Infinity, runtimeTransformLayerMask))
                 {
                 }
                 else if (highlight)
@@ -71,7 +75,19 @@ public class NewGizmo : MonoBehaviour
                         originalMaterialSelection = originalMaterialHighlight;
                         selection.GetComponent<MeshRenderer>().material = selectionMaterial;
                         //runtimeTransformHandle.target = selection;
-                        Gizmo.SetActive(true);
+
+                        //cria uma nova posicao y
+                        float newYPosition = selection.transform.position.y - 2.1f;
+                        //cria a posicao final do gizmo
+                        Vector3 gizmoPosition = new Vector3(selection.transform.position.x, newYPosition, selection.transform.position.z);
+                        //instancia o gizmo
+                        GameObject myGizmo = Instantiate(Gizmo, gizmoPosition, transform.rotation * Quaternion.Euler(8f, -230f, -8f)) as GameObject;
+                        myGizmo.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+
+                        //transforma o objeto selecionado em filho do Gizmo
+                        selection.transform.SetParent(myGizmo.transform);
+
+                        //Gizmo.SetActive(true);
                     }
                     highlight = null;
                 }
@@ -81,8 +97,8 @@ public class NewGizmo : MonoBehaviour
                     {
                         selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                         selection = null;
-
-                        Gizmo.SetActive(false);
+                        
+                        //Gizmo.SetActive(false);
                     }
                 }
             }
@@ -93,7 +109,7 @@ public class NewGizmo : MonoBehaviour
                     selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                     selection = null;
 
-                    Gizmo.SetActive(false);
+                    //Gizmo.SetActive(false);
                 }
             }
         }

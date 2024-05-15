@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - X Axis
+  - Y Axis
+  - Z Axis
   layers:
   - Default
   - TransparentFX
