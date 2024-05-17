@@ -20,6 +20,7 @@ public class NewGizmo : MonoBehaviour
 
     private int runtimeTransformLayerMask;
 
+    //public Camera m_Camera;
 
     void Start()
     {
@@ -51,8 +52,6 @@ public class NewGizmo : MonoBehaviour
                 highlight = null;
             }
         }
-
-        
 
         //Para ter os objetos a mudar de cor quando estão selecionados pelo cursor
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
@@ -114,4 +113,10 @@ public class NewGizmo : MonoBehaviour
             }
         }
     }
+
+    /* void LateUpdate()
+    {
+        transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
+            m_Camera.transform.rotation * Vector3.up);
+    } */
 }
