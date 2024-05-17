@@ -20,11 +20,8 @@ public class NewGizmo : MonoBehaviour
 
     private int runtimeTransformLayerMask;
 
-    //public Camera m_Camera;
-
     void Start()
     {
-        //Gizmo.SetActive(false);
     }
 
     void Update()
@@ -85,8 +82,6 @@ public class NewGizmo : MonoBehaviour
 
                         //transforma o objeto selecionado em filho do Gizmo
                         selection.transform.SetParent(myGizmo.transform);
-
-                        //Gizmo.SetActive(true);
                     }
                     highlight = null;
                 }
@@ -96,8 +91,6 @@ public class NewGizmo : MonoBehaviour
                     {
                         selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                         selection = null;
-                        
-                        //Gizmo.SetActive(false);
                     }
                 }
             }
@@ -107,16 +100,8 @@ public class NewGizmo : MonoBehaviour
                 {
                     selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                     selection = null;
-
-                    //Gizmo.SetActive(false);
                 }
             }
         }
     }
-
-    /* void LateUpdate()
-    {
-        transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
-            m_Camera.transform.rotation * Vector3.up);
-    } */
 }
