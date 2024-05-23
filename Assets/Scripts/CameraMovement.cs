@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
+
 using UnityEngine;
+
 
 public class CameraMovement : MonoBehaviour
 {
@@ -11,16 +11,29 @@ public class CameraMovement : MonoBehaviour
     public float LimiteSuperior = 90f; // Angulo minimo do X da camara
 
     [Header("Camera Look")]
-    public float lookSpeed = 1f;
+    public float lookSpeed = 1f,  panSpeed = 1f; 
     private Vector3 rotation;
 
+    private bool pan = false;
+    // Start is called before the first frame update
     void Start()
     {
     }
 
+    
+
+
+    // Update is called once per frame
     void Update()
     {
         
+        if(Input.GetKey(KeyCode.Space))
+        {
+            pan = true;
+        } else {
+            pan = false;
+        }
+
         if(Input.GetMouseButton(1)){
 
             transform.position += speed * Time.deltaTime *transform.TransformDirection(Vector3.right)*Input.GetAxis("Horizontal");
@@ -37,8 +50,19 @@ public class CameraMovement : MonoBehaviour
             rotation.x = LimiteSuperior;
             } 
         }
-    }
     
+        if(pan){
+            
+            if(Input.GetMouseButton(0)){
+
+                transform.position += panSpeed  * transform.TransformDirection(Vector3.right) * Input.GetAxis("Mouse X");
+                transform.position += panSpeed * transform.TransformDirection(Vector3.up) * Input.GetAxis("Mouse Y");
+            }
+        }
+    
+ 
+        
+    }
     public void ChangePerspective()
     {
         if(Camera.main.orthographic)

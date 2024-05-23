@@ -1127,6 +1127,7 @@ MonoBehaviour:
   LimiteInferior: -90
   LimiteSuperior: 90
   lookSpeed: 2
+  panSpeed: 0.2
 --- !u!1 &1413948646
 GameObject:
   m_ObjectHideFlags: 0
