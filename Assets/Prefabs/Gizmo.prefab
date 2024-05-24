@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5764175015591318458}
   - component: {fileID: 2491125527265996881}
   m_Layer: 0
-  m_Name: Cubo z
+  m_Name: CuboZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 7273457636790796268}
   - component: {fileID: 4150748429116153077}
   m_Layer: 0
-  m_Name: Cubo y
+  m_Name: CuboY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1904320518882426552}
   - component: {fileID: 4316604214016543171}
   m_Layer: 0
-  m_Name: Cubo x
+  m_Name: CuboX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,8 +344,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7267955457857067081}
   - {fileID: 4942183116001716692}
   - {fileID: 7345277827232767544}
-  - {fileID: 7267955457857067081}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
