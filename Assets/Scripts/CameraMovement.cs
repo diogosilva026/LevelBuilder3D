@@ -59,15 +59,7 @@ public class CameraMovement : MonoBehaviour
                 transform.position += panSpeed * transform.TransformDirection(Vector3.up) * Input.GetAxis("Mouse Y");
             }
         }
-    
- 
         
     }
-    public void ChangePerspective()
-    {
-        if(Camera.main.orthographic)
-            Camera.main.orthographic = false;
-        else
-            Camera.main.orthographic = true;
-    }
+
 }
