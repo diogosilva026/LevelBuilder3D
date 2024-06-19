@@ -23,12 +23,6 @@ public class SelectTransformGizmo : MonoBehaviour
     private void Start()
     {
         runtimeTransformGameObj = new GameObject();
-        //runtimeTransformHandle = runtimeTransformGameObj.AddComponent<RuntimeTransformHandle>();
-        runtimeTransformGameObj.layer = runtimeTransformLayer;
-        runtimeTransformLayerMask = 1 << runtimeTransformLayer; //Layer number represented by a single bit in the 32-bit integer using bit shift
-        //runtimeTransformHandle.type = HandleType.POSITION;
-        //runtimeTransformHandle.autoScale = true;
-        //runtimeTransformHandle.autoScaleFactor = 1.0f;
         runtimeTransformGameObj.SetActive(false);
     }
 
@@ -61,7 +55,6 @@ public class SelectTransformGizmo : MonoBehaviour
         // Selection
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            ApplyLayerToChildren(runtimeTransformGameObj);
             if (Physics.Raycast(ray, out raycastHit))
             {
                 if (Physics.Raycast(ray, out raycastHitHandle, Mathf.Infinity, runtimeTransformLayerMask)) //Raycast towards runtime transform handle only
@@ -111,54 +104,31 @@ public class SelectTransformGizmo : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                //runtimeTransformHandle.type = HandleType.POSITION;
+                
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                //runtimeTransformHandle.type = HandleType.ROTATION;
+                
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                //runtimeTransformHandle.type = HandleType.SCALE;
+                
             }
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
                 if (Input.GetKeyDown(KeyCode.G))
                 {
-                   // runtimeTransformHandle.space = HandleSpace.WORLD;
+                   
                 }
                 if (Input.GetKeyDown(KeyCode.L))
                 {
-                    //runtimeTransformHandle.space = HandleSpace.LOCAL;
+                    
                 }
             }
         }
 
     }
 
-    private void ApplyLayerToChildren(GameObject parentGameObj)
-    {
-        foreach (Transform transform1 in parentGameObj.transform)
-        {
-            int layer = parentGameObj.layer;
-            transform1.gameObject.layer = layer;
-            foreach (Transform transform2 in transform1)
-            {
-                transform2.gameObject.layer = layer;
-                foreach (Transform transform3 in transform2)
-                {
-                    transform3.gameObject.layer = layer;
-                    foreach (Transform transform4 in transform3)
-                    {
-                        transform4.gameObject.layer = layer;
-                        foreach (Transform transform5 in transform4)
-                        {
-                            transform5.gameObject.layer = layer;
-                        }
-                    }
-                }
-            }
-        }
-    }
+
 
 }

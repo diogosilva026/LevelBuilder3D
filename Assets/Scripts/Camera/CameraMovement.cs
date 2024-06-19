@@ -34,7 +34,17 @@ public class CameraMovement : MonoBehaviour
             pan = false;
         }
 
-        if(Input.GetMouseButton(1)){
+    
+        if(pan){
+            
+            if(Input.GetMouseButton(1)){
+
+                transform.position += panSpeed  * transform.TransformDirection(Vector3.right) * Input.GetAxis("Mouse X");
+                transform.position += panSpeed * transform.TransformDirection(Vector3.up) * Input.GetAxis("Mouse Y");
+            }
+            
+        } else {
+            if(Input.GetMouseButton(1)){
 
             transform.position += speed * Time.deltaTime *transform.TransformDirection(Vector3.right)*Input.GetAxis("Horizontal");
             transform.position +=  speed*Time.deltaTime*transform.TransformDirection(Vector3.forward)*Input.GetAxis("Vertical");
@@ -49,17 +59,11 @@ public class CameraMovement : MonoBehaviour
             {
             rotation.x = LimiteSuperior;
             } 
+            }
+
         }
     
-        if(pan){
-            
-            if(Input.GetMouseButton(0)){
-
-                transform.position += panSpeed  * transform.TransformDirection(Vector3.right) * Input.GetAxis("Mouse X");
-                transform.position += panSpeed * transform.TransformDirection(Vector3.up) * Input.GetAxis("Mouse Y");
-            }
-        }
+ 
         
     }
-
 }

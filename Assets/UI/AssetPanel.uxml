@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; opacity: 0.5; height: 979px; width: 406px;">
+        <ui:TextField picking-mode="Ignore" label="Search" value="filler text" name="TextField" style="width: 315px; flex-direction: row;" />
+        <ui:ListView focusable="true" style="height: 937px; width: 329px;" />
+    </ui:VisualElement>
+</ui:UXML>
