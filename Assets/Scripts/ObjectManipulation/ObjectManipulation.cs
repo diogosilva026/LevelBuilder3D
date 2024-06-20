@@ -2,37 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class NewGizmo : MonoBehaviour
+public class ObjectManipulation : MonoBehaviour
 {
     public Material highlightMaterial;
     public Material selectionMaterial;
-    public GameObject Gizmo;
 
     private Transform highlight;
     private Material originalMaterialHighlight;
     private Material originalMaterialSelection;
     private RaycastHit raycastHit;
-    private RaycastHit raycastHitHandle;
     private Transform selection;
+    Ray ray;
 
-    private int runtimeTransformLayerMask;
+    public GameObject mainGizmo, rot, sca, tra;
+
+    StateController_Gizmo scGizmo;
 
     void Start()
     {
+        scGizmo = new StateController_Gizmo(mainGizmo);
+        scGizmo.SetState(new HiddenState(), null);
     }
 
     void Update()
     {
+
+        scGizmo.Update();
         //Para ter os objetos a mudar de cor com o rato por cima
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
         if (highlight != null)
         {
             highlight.GetComponent<MeshRenderer>().sharedMaterial = originalMaterialHighlight;
             highlight = null;
         }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit))
         {
             highlight = raycastHit.transform;
@@ -50,38 +57,33 @@ public class NewGizmo : MonoBehaviour
             }
         }
 
-        //Para ter os objetos a mudar de cor quando est�o selecionados pelo cursor
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            //ApplyLayerToChildren(runtimeTransformGameObj);
+
             if (Physics.Raycast(ray, out raycastHit))
             {
-                if (Physics.Raycast(ray, out raycastHitHandle, Mathf.Infinity, runtimeTransformLayerMask))
+
+                if (highlight)
                 {
-                }
-                else if (highlight)
-                {
+                    //devolve o material original ao asset anteriormente selecionado 
                     if (selection != null)
                     {
                         selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                     }
+                    //passa a tranform do objeto interceptado para o selection
+                if(!selection || selection.GetHashCode() != raycastHit.transform.GetHashCode())
+                {
                     selection = raycastHit.transform;
+                    Subject.TSelected(selection);
+                    Debug.Log(scGizmo);
+                    scGizmo.SetState(new TranState(), selection.gameObject);
+                }
+                
+
                     if (selection.GetComponent<MeshRenderer>().material != selectionMaterial)
                     {
                         originalMaterialSelection = originalMaterialHighlight;
                         selection.GetComponent<MeshRenderer>().material = selectionMaterial;
-                        //runtimeTransformHandle.target = selection;
-
-                        //cria uma nova posicao y
-                        float newYPosition = selection.transform.position.y - 2.1f;
-                        //cria a posicao final do gizmo
-                        Vector3 gizmoPosition = new Vector3(selection.transform.position.x, newYPosition, selection.transform.position.z);
-                        //instancia o gizmo
-                        //GameObject myGizmo = Instantiate(Gizmo, gizmoPosition, transform.rotation * Quaternion.Euler(8f, -230f, -8f)) as GameObject;
-                        //myGizmo.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-
-                        //transforma o objeto selecionado em filho do Gizmo
-                        //selection.transform.SetParent(myGizmo.transform);
                     }
                     highlight = null;
                 }
@@ -91,6 +93,7 @@ public class NewGizmo : MonoBehaviour
                     {
                         selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                         selection = null;
+                        
                     }
                 }
             }
@@ -100,8 +103,37 @@ public class NewGizmo : MonoBehaviour
                 {
                     selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                     selection = null;
+                    scGizmo.SetState(new HiddenState(), null);
                 }
             }
         }
-    }
+        if(selection)
+        {
+            mainGizmo.transform.position = selection.transform.position;
+        }
+
+        if (mainGizmo.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+              scGizmo.SetState(new TranState(), selection.gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                scGizmo.SetState(new RotState(), selection.gameObject);
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                scGizmo.SetState(new ScaState(),selection.gameObject);
+            }
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                if (Input.GetKeyDown(KeyCode.G))
+                {   
+                    Subject.ToggleGrid();
+                }
+            }
+
+        }
+    }// UPDATE BRACKET
 }
