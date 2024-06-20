@@ -123,8 +123,7 @@ public class ExportImportMap : MonoBehaviour
             GameObject vObjToSpawn = new GameObject();
 
             // Define a posição, rotação, escala e nome do GameObject
-            vObjToSpawn.transform.position = vData.positions[i];
-            vObjToSpawn.transform.rotation = vData.rotations[i];
+            vObjToSpawn.transform.SetPositionAndRotation(vData.positions[i], vData.rotations[i]);
             vObjToSpawn.transform.localScale = vData.scales[i];
             vObjToSpawn.transform.tag = "Selectable";
             vObjToSpawn.name = vData.names[i];
