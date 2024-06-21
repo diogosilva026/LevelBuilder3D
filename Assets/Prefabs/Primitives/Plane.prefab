@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7284895821399425422}
   - component: {fileID: 2027171259935684945}
   - component: {fileID: 1431239248493484679}
-  - component: {fileID: 6759108463236287847}
+  - component: {fileID: 4814523526911688566}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Selectable
@@ -107,7 +107,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6759108463236287847
+--- !u!114 &4814523526911688566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,22 +116,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7819140896447432428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374172cd66dcc5a4bbd304de63f8c6df, type: 3}
+  m_Script: {fileID: 11500000, guid: 15b1d25b496835c458b1ad8dfd267992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   screenPoint: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
-  currentScale: {x: 0, y: 0, z: 0}
-  mMovementGizmo: {fileID: 0}
-  GMoveX: {fileID: 0}
-  GMoveY: {fileID: 0}
-  GMoveZ: {fileID: 0}
-  mRotationGizmo: {fileID: 0}
-  GRotateX: {fileID: 0}
-  GRotateY: {fileID: 0}
-  GRotateZ: {fileID: 0}
-  mScaleGizmo: {fileID: 0}
-  GScaleX: {fileID: 0}
-  GScaleY: {fileID: 0}
-  GScaleZ: {fileID: 0}

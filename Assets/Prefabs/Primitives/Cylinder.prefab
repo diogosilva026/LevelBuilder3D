@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7345411847911846768}
   - component: {fileID: 9018386735819240410}
   - component: {fileID: 1091000190785982659}
-  - component: {fileID: 7239308749324086195}
+  - component: {fileID: 6689848101140769691}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Selectable
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &7239308749324086195
+--- !u!114 &6689848101140769691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,22 +117,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8514340782610865969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374172cd66dcc5a4bbd304de63f8c6df, type: 3}
+  m_Script: {fileID: 11500000, guid: 15b1d25b496835c458b1ad8dfd267992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   screenPoint: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
-  currentScale: {x: 0, y: 0, z: 0}
-  mMovementGizmo: {fileID: 0}
-  GMoveX: {fileID: 0}
-  GMoveY: {fileID: 0}
-  GMoveZ: {fileID: 0}
-  mRotationGizmo: {fileID: 0}
-  GRotateX: {fileID: 0}
-  GRotateY: {fileID: 0}
-  GRotateZ: {fileID: 0}
-  mScaleGizmo: {fileID: 0}
-  GScaleX: {fileID: 0}
-  GScaleY: {fileID: 0}
-  GScaleZ: {fileID: 0}

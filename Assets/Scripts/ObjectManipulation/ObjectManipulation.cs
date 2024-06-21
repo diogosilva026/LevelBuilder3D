@@ -124,7 +124,7 @@ public class ObjectManipulation : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                scGizmo.SetState(new ScaState(),selection.gameObject);
+                scGizmo.SetState(new ScaState(), selection.gameObject);
             }
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
