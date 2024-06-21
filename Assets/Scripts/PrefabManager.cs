@@ -11,19 +11,13 @@ public class PrefabManager : MonoBehaviour
 
     // movement gizmos
     public GameObject mMovementGizmo;
-    public GameObject GMoveX;
-    public GameObject GMoveY;
-    public GameObject GMoveZ;
+
 
     // rotation gizmos
     public GameObject mRotationGizmo;
-    public GameObject GRotateX;
-    public GameObject GRotateY;
-    public GameObject GRotateZ;
+
 
     // scale gizmos
     public GameObject mScaleGizmo;
-    public GameObject GScaleX;
-    public GameObject GScaleY;
-    public GameObject GScaleZ;
+
 }
